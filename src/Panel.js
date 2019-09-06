@@ -32,8 +32,8 @@ export default class Panel extends React.Component {
     this.setTheme(themes, theme)
   }
 
-  updateTheme(e) {
-    this.setTheme(this.state.themes, e.target.value)
+  updateTheme(theme) {
+    this.setTheme(this.state.themes, theme)
   }
 
   setTheme(themes, theme) {
@@ -50,9 +50,9 @@ export default class Panel extends React.Component {
     if (!theme) return <div>Addon is initialising</div>
 
     const Button = styled.button`
-        background-color: #4CAF50;
+        background-color: #5BC1EE;
         /* Green background */
-        border: 1px solid green;
+        border: 1px solid white;
         /* Green border */
         color: white;
         /* White text */
@@ -67,7 +67,7 @@ export default class Panel extends React.Component {
             /* Prevent double borders */
         }
         &:hover {
-            background-color: #3e8e41;
+            background-color: #DD356F;
         }
     `;
 
@@ -80,9 +80,9 @@ export default class Panel extends React.Component {
     `;
 
     return (
-        <Div class="btn-group">
+        <Div>
             {Object.keys(themes).map(theme => (
-                <Button value={theme} onChange={this.updateTheme}>{theme}</Button>
+                <Button key={theme} onChange={() => this.updateTheme(theme)}>{theme}</Button>
           ))}
         </Div>
       

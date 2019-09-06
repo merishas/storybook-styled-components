@@ -43,8 +43,8 @@ class Panel extends _react2.default.Component {
     this.setTheme(themes, theme);
   }
 
-  updateTheme(e) {
-    this.setTheme(this.state.themes, e.target.value);
+  updateTheme(theme) {
+    this.setTheme(this.state.themes, theme);
   }
 
   setTheme(themes, theme) {
@@ -65,9 +65,9 @@ class Panel extends _react2.default.Component {
     );
 
     const Button = _styledComponents2.default.button`
-        background-color: #4CAF50;
+        background-color: #5BC1EE;
         /* Green background */
-        border: 1px solid green;
+        border: 1px solid white;
         /* Green border */
         color: white;
         /* White text */
@@ -82,7 +82,7 @@ class Panel extends _react2.default.Component {
             /* Prevent double borders */
         }
         &:hover {
-            background-color: #3e8e41;
+            background-color: #DD356F;
         }
     `;
 
@@ -96,10 +96,10 @@ class Panel extends _react2.default.Component {
 
     return _react2.default.createElement(
       Div,
-      { 'class': 'btn-group' },
+      null,
       Object.keys(themes).map(theme => _react2.default.createElement(
         Button,
-        { value: theme, onChange: this.updateTheme },
+        { key: theme, onChange: () => this.updateTheme(theme) },
         theme
       ))
     );
