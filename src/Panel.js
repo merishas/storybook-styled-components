@@ -1,4 +1,5 @@
 import React from 'react';
+import "style.css";
 
 export default class Panel extends React.Component {
 
@@ -49,13 +50,12 @@ export default class Panel extends React.Component {
     if (!theme) return <div>Addon is initialising</div>
 
     return (
-      <div>
-        <select value={theme} onChange={this.updateTheme}>
-          {Object.keys(themes).map(theme => (
-            <option key={theme} value={theme}>{theme}</option>
+        <div class="btn-group">
+            {Object.keys(themes).map(theme => (
+                <button value={theme} onChange={this.updateTheme}>{theme}</button>
           ))}
-        </select>
-      </div>
+        </div>
+      
     )
   }
 }
