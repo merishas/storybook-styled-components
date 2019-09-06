@@ -1,6 +1,37 @@
 import React from 'react';
 import "style.css";
+import { styled } from 'styled-components';
 
+const Button = styled.button`
+    background-color: #4CAF50;
+    /* Green background */
+    border: 1px solid green;
+    /* Green border */
+    color: white;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
+    &:not(:last-child) {
+        border-right: none;
+        /* Prevent double borders */
+    }
+    &:hover {
+        background-color: #3e8e41;
+    }
+`;
+
+const Div = styled.div`
+  
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+`;
 export default class Panel extends React.Component {
 
   constructor(props) {
@@ -50,11 +81,11 @@ export default class Panel extends React.Component {
     if (!theme) return <div>Addon is initialising</div>
 
     return (
-        <div class="btn-group">
+        <Div class="btn-group">
             {Object.keys(themes).map(theme => (
-                <button value={theme} onChange={this.updateTheme}>{theme}</button>
+                <Button value={theme} onChange={this.updateTheme}>{theme}</Button>
           ))}
-        </div>
+        </Div>
       
     )
   }

@@ -8,8 +8,42 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+require('style.css');
+
+var _styledComponents = require('styled-components');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const Button = _styledComponents.styled.button`
+    background-color: #4CAF50;
+    /* Green background */
+    border: 1px solid green;
+    /* Green border */
+    color: white;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
+    &:not(:last-child) {
+        border-right: none;
+        /* Prevent double borders */
+    }
+    &:hover {
+        background-color: #3e8e41;
+    }
+`;
+
+const Div = _styledComponents.styled.div`
+  
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+`;
 class Panel extends _react2.default.Component {
 
   constructor(props) {
@@ -61,17 +95,13 @@ class Panel extends _react2.default.Component {
     );
 
     return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'select',
+      Div,
+      { 'class': 'btn-group' },
+      Object.keys(themes).map(theme => _react2.default.createElement(
+        Button,
         { value: theme, onChange: this.updateTheme },
-        Object.keys(themes).map(theme => _react2.default.createElement(
-          'option',
-          { key: theme, value: theme },
-          theme
-        ))
-      )
+        theme
+      ))
     );
   }
 }
