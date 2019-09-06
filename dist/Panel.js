@@ -93,12 +93,21 @@ class Panel extends _react2.default.Component {
             display: table;
         }
     `;
+    const Paragraph = _styledComponents2.default.p`
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    `;
 
     return _react2.default.createElement(
       Div,
       null,
-      'Current Theme: ',
-      this.state.theme,
+      _react2.default.createElement(
+        Paragraph,
+        null,
+        'Current Theme: ',
+        this.state.theme
+      ),
       Object.keys(themes).map(theme => _react2.default.createElement(
         Button,
         { key: theme, value: theme, onClick: this.updateTheme },

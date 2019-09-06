@@ -78,10 +78,18 @@ export default class Panel extends React.Component {
             display: table;
         }
     `;
+    const Paragraph = styled.p`
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    `
 
     return (
         <Div>
-            Current Theme: {this.state.theme}
+            <Paragraph>
+                Current Theme: {this.state.theme}
+            </Paragraph>
+            
             {Object.keys(themes).map(theme => (
                 <Button key={theme} value={theme} onClick={this.updateTheme}>{theme}</Button>
           ))}
