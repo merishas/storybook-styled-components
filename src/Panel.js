@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export default class Panel extends React.Component {
 
@@ -32,8 +32,8 @@ export default class Panel extends React.Component {
     this.setTheme(themes, theme)
   }
 
-  updateTheme(theme) {
-    this.setTheme(this.state.themes, theme)
+  updateTheme(e) {
+    this.setTheme(this.state.themes, e.target.value)
   }
 
   setTheme(themes, theme) {
@@ -81,8 +81,9 @@ export default class Panel extends React.Component {
 
     return (
         <Div>
+            Current Theme: {this.state.theme}
             {Object.keys(themes).map(theme => (
-                <Button key={theme} onChange={() => this.updateTheme(theme)}>{theme}</Button>
+                <Button key={theme} value={theme} onClick={this.updateTheme}>{theme}</Button>
           ))}
         </Div>
       

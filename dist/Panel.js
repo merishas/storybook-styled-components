@@ -43,8 +43,8 @@ class Panel extends _react2.default.Component {
     this.setTheme(themes, theme);
   }
 
-  updateTheme(theme) {
-    this.setTheme(this.state.themes, theme);
+  updateTheme(e) {
+    this.setTheme(this.state.themes, e.target.value);
   }
 
   setTheme(themes, theme) {
@@ -97,9 +97,11 @@ class Panel extends _react2.default.Component {
     return _react2.default.createElement(
       Div,
       null,
+      'Current Theme: ',
+      this.state.theme,
       Object.keys(themes).map(theme => _react2.default.createElement(
         Button,
-        { key: theme, onChange: () => this.updateTheme(theme) },
+        { key: theme, value: theme, onClick: this.updateTheme },
         theme
       ))
     );
