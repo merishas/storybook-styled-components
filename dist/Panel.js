@@ -10,6 +10,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _styledComponents = require('styled-components');
 
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class Panel extends _react2.default.Component {
@@ -62,7 +64,7 @@ class Panel extends _react2.default.Component {
       'Addon is initialising'
     );
 
-    const Button = _styledComponents.styled.button`
+    const Button = _styledComponents2.default.button`
         background-color: #4CAF50;
         /* Green background */
         border: 1px solid green;
@@ -84,7 +86,7 @@ class Panel extends _react2.default.Component {
         }
     `;
 
-    const Div = _styledComponents.styled.div`
+    const Div = _styledComponents2.default.div`
         &:after {
             content: "";
             clear: both;
