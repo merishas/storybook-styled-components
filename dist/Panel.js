@@ -67,7 +67,7 @@ class Panel extends _react2.default.Component {
         const Button = _styledComponents2.default.button`
         margin-right: 5px;
         border-radius: 3px;
-            background-color: ${props => props.value === this.state.theme ? _styledComponents.css`
+            background-color: ${props => props.value === props.currentTheme ? _styledComponents.css`
                     background-color: #696969;
                 ` : _styledComponents.css`
                     background-color: #A9A9A9;
@@ -116,7 +116,7 @@ class Panel extends _react2.default.Component {
             ),
             Object.keys(themes).map(theme => _react2.default.createElement(
                 Button,
-                { key: theme, value: theme, onClick: this.updateTheme },
+                { key: theme, value: theme, currentTheme: this.state.theme, onClick: this.updateTheme },
                 theme
             ))
         );
