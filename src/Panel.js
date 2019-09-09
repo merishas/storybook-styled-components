@@ -52,7 +52,7 @@ export default class Panel extends React.Component {
     const Button = styled.button`
         margin-right: 5px;
         border-radius: 3px;
-            background-color: ${props => props.value === props.currentTheme
+            background-color: ${props => props.active
                 ? css`
                     background-color: #696969;
                 `
@@ -100,7 +100,7 @@ export default class Panel extends React.Component {
             </Paragraph>
             
             {Object.keys(themes).map(theme => (
-                <Button key={theme} value={theme} currentTheme={this.state.theme} onClick={this.updateTheme}>{theme}</Button>
+                <Button key={theme} value={theme} {... this.state.theme === theme ? active : null} onClick={this.updateTheme}>{theme}</Button>
           ))}
         </Div>
       
