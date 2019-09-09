@@ -54,10 +54,10 @@ export default class Panel extends React.Component {
         border-radius: 3px;
             background-color: ${props => props.value === this.state.theme
                 ? css`
-                    background: #696969;
+                    background-color: #696969;
                 `
                 : css`
-                    background: #A9A9A9;
+                    background-color: #A9A9A9;
                 `
             }
         /* Green background */

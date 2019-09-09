@@ -68,9 +68,9 @@ class Panel extends _react2.default.Component {
         margin-right: 5px;
         border-radius: 3px;
             background-color: ${props => props.value === this.state.theme ? _styledComponents.css`
-                    background: #696969;
+                    background-color: #696969;
                 ` : _styledComponents.css`
-                    background: #A9A9A9;
+                    background-color: #A9A9A9;
                 `}
         /* Green background */
         border: 1px solid white;
