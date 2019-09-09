@@ -50,6 +50,8 @@ export default class Panel extends React.Component {
     if (!theme) return <div>Addon is initialising</div>
 
     const Button = styled.button`
+        margin-right: 5px;
+        border-radius: 3px;
         background-color: #5BC1EE;
         /* Green background */
         border: 1px solid white;

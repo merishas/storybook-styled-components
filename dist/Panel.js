@@ -65,6 +65,8 @@ class Panel extends _react2.default.Component {
     );
 
     const Button = _styledComponents2.default.button`
+        margin-right: 5px;
+        border-radius: 3px;
         background-color: #5BC1EE;
         /* Green background */
         border: 1px solid white;
