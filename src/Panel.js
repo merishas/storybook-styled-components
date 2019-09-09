@@ -52,7 +52,14 @@ export default class Panel extends React.Component {
     const Button = styled.button`
         margin-right: 5px;
         border-radius: 3px;
-        background-color: #5BC1EE;
+            background-color: ${props => props.value === this.state.theme
+                ? css`
+                    background: #696969;
+                `
+                : css`
+                    background: #A9A9A9;
+                `
+            }
         /* Green background */
         border: 1px solid white;
         /* Green border */
@@ -69,7 +76,7 @@ export default class Panel extends React.Component {
             /* Prevent double borders */
         }
         &:hover {
-            background-color: #DD356F;
+            background-color: #696969;
         }
     `;
 
