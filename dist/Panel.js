@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -73,7 +71,7 @@ class Panel extends _react2.default.Component {
                     background-color: #696969;
                 ` : _styledComponents.css`
                     background-color: #A9A9A9;
-                `}
+                `};
         /* Green background */
         border: 1px solid white;
         /* Green border */
@@ -118,7 +116,7 @@ class Panel extends _react2.default.Component {
             ),
             Object.keys(themes).map(theme => _react2.default.createElement(
                 Button,
-                _extends({ key: theme, value: theme }, this.state.theme === theme ? active : null, { onClick: this.updateTheme }),
+                { key: theme, value: theme, active: this.state.theme === theme ? true : false, onClick: this.updateTheme },
                 theme
             ))
         );
